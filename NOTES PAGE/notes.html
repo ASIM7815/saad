@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Subject Notes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS for animations and theme */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; /* A soft, light blue-gray background */
+            color: #1e293b; /* A dark slate color for text for better readability */
+        }
+
+        /* Typing animation for the main header */
+        .typing-effect {
+            width: 0;
+            overflow: hidden; /* Ensures the text is not seen until the animation starts */
+            white-space: nowrap; /* Keeps the text on a single line */
+            
+           
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+
+        /* Staggered fade-in animation for subject cards */
+        .subject-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Applying animation delays to each card for a staggered effect */
+        .subject-card:nth-child(1) { animation-delay: 0.2s; }
+        .subject-card:nth-child(2) { animation-delay: 0.4s; }
+        .subject-card:nth-child(3) { animation-delay: 0.6s; }
+        .subject-card:nth-child(4) { animation-delay: 0.8s; }
+        .subject-card:nth-child(5) { animation-delay: 1.0s; } /* Delay for the new card */
+
+        /* Custom styles for the card image containers for a consistent look */
+        .card-image-container {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            transition: transform 0.4s ease-in-out;
+        }
+        
+        .subject-card:hover .card-image-container img {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-4 py-8 md:py-16">
+
+        <!-- Header Section -->
+        <header class="text-center mb-12 md:mb-16">
+            <h1 id="main-title" class="text-4xl md:text-6xl font-bold text-slate-800 mb-2">
+                <!-- This text will be replaced by the animated title -->
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500">Your central hub for all study materials.</p>
+        </header>
+
+        <!-- Subjects Grid -->
+        <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+           <!-- Card 1: Mathematics -->
+<a href="https://asim7815.github.io/mathematics/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2070&auto=format&fit=crop" alt="Mathematics illustration"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Math';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-blue-500 mb-2">MATHEMATICS</h2>
+      <p class="text-slate-600 mb-4">Explore concepts from algebra, calculus, and geometry.</p>
+      <div class="inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+
+<!-- Card 2: C-Programming (PPS) -->
+<a href="https://asim7815.github.io/c-programming/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="C-Programming code on a screen"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/22c55e/ffffff?text=C-Lang';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-green-500 mb-2">C-PROGRAMMING (PPS)</h2>
+      <p class="text-slate-600 mb-4">Master the fundamentals of programming and problem-solving.</p>
+      <div class="inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+
+<!-- Card 3: Physics -->
+<a href="https://asim7815.github.io/engineeringphysics/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1974&auto=format&fit=crop" alt="Physics concept illustration"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Physics';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-purple-500 mb-2">PHYSICS</h2>
+      <p class="text-slate-600 mb-4">Uncover the laws of motion, energy, and the universe.</p>
+      <div class="inline-block bg-purple-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-purple-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+
+<!-- Card 4: Chemistry -->
+<a href="https://asim7815.github.io/chemistry/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=2072&auto=format&fit=crop" alt="Chemistry lab equipment"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/f97316/ffffff?text=Chemistry';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-orange-500 mb-2">CHEMISTRY</h2>
+      <p class="text-slate-600 mb-4">Dive into the world of atoms, molecules, and chemical reactions.</p>
+      <div class="inline-block bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+
+<!-- Card 5: BEE (Basic Electrical Engineering) -->
+<a href="https://asim7815.github.io/BEE/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="BEE.png" alt="Electronic components on a breadboard"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/f59e0b/ffffff?text=BEE';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-amber-500 mb-2">BEE (BASIC ELECTRICAL ENGG)</h2>
+      <p class="text-slate-600 mb-4">Understand circuits, currents, and electrical systems.</p>
+      <div class="inline-block bg-amber-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+<!-- Card 5: BEE (Basic Electrical Engineering) -->
+<a href="https://asim7815.github.io/engineering-mechanics/" class="block">
+  <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    <div class="card-image-container">
+      <img src="EM.ipg.jpg" alt="Electronic components on a breadboard"
+           onerror="this.onerror=null;this.src='https://placehold.co/600x400/f59e0b/ffffff?text=BEE';">
+    </div>
+    <div class="p-6">
+      <h2 class="text-2xl font-bold text-amber-500 mb-2">ENGINEERING-MECHANICS</h2>
+      <p class="text-slate-600 mb-4">The Force Behind Every Motion</p>
+      <div class="inline-block bg-amber-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300">View Notes</div>
+    </div>
+  </div>
+</a>
+
+
+        </main>
+    </div>
+
+    <script>
+        // JavaScript for the typing animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleText = "NOTES";
+            const titleElement = document.getElementById('main-title');
+            
+            // Create a span for the typing effect to live inside the h1
+            const typingSpan = document.createElement('span');
+            typingSpan.className = 'typing-effect';
+            titleElement.appendChild(typingSpan);
+            
+            // Set the text content of the span
+            typingSpan.textContent = titleText;
+        });
+    </script>
+
+</body>
+</html>
